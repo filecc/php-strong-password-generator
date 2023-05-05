@@ -11,6 +11,7 @@ generatePassword();
             echo $value;
         } ?>
         </p>
+        <a href="index.php">Torna alla home</a>
 <?php else: ?>
     <?php header('Location: ./index.php') ?>
     <?php endif ?>
