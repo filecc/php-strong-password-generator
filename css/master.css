@@ -1,3 +1,22 @@
-p{
-    word-break: break-all;
+body{
+    min-height: 100dvh;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header{
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    padding: 1rem;
+}
+main{
+    height: calc(100dvh - 3rem);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+span{
+    cursor: pointer;
 }
