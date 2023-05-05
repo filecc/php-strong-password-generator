@@ -1,9 +1,16 @@
 <?php 
 include __DIR__ . '/partials/haed.php';
+$complete = false;
+$counter = 0;
+if(!empty($_GET["passwordLenght"])){
+    while ($counter < $_GET["passwordLenght"] ) {
+        $password[] = chr(rand(32,125));
+        $counter++;
+     }
+     $complete = true;
+};
 
-?>
-<!-- 
-Descrizione
+/* Descrizione
 
 Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure.
 L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
@@ -17,10 +24,29 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 
 Milestone 3 (BONUS)
 Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
- -->
+ */
+?>
 
-<main>
+
+<header>
     <h1>Hello</h1>
+</header>
+<main>
+    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET">
+        <div class="mb-3">
+            <label for="passwordLenght" class="form-label">Inserisci la lunghezza della password</label>
+            <input type="number" class="form-control" id="passwordLenght" name="passwordLenght" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <?php if($complete): ?>
+        <p>
+        <?php foreach ($password as $value)  {
+            echo $value;
+        } ?>
+        </p>
+    
+    <?php endif ?>
 </main>
 
 
