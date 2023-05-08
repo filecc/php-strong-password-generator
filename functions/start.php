@@ -10,7 +10,7 @@ function generatePassword() {
     ];
     if(!empty($_GET["passwordLenght"])){
 
-        while ($counter < $_GET["passwordLenght"] &&  $counter < 30) {
+        while ($counter < $_GET["passwordLenght"] &&  $counter < 32) {
             $randomNumb = rand(33,125);
         if (!in_array($randomNumb, $non_password_chars)){
             $password[] = chr($randomNumb);

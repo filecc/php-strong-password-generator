@@ -12,8 +12,8 @@ include __DIR__ . '/partials/head.php';
 <main>
     <form action="results.php" method="GET">
         <div class="mb-3">
-            <label for="passwordLenght" class="form-label text-white">Inserisci la lunghezza della password (max 30)</label>
-            <input type="number" class="form-control" id="passwordLenght" name="passwordLenght" required>
+            <label for="passwordLenght" class="form-label text-white">Inserisci la lunghezza della password (max 32)</label>
+            <input min="8" max="32" type="number" class="form-control" id="passwordLenght" name="passwordLenght" required>
         </div>
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
